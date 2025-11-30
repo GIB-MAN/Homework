@@ -1,0 +1,61 @@
+﻿.anton {font-family: Anton;}
+.softline1 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:95%;
+	}
+.softline2 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:85%;
+	}
+.softline3 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:88%;
+	}
+.softline4 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4);
+	width:92%;
+	}
+.user-box {
+	width:100%; 
+	background-color:#fff; 
+	}
+.user-box img {
+	width:100%; 
+	height:100%; 
+	}
+.head-text {
+	font-size: clamp(23px, 6vw, 65pt);
+	}
+.progress-box {
+	width:100%; 
+	aspect-ratio: 1;
+	border:5px solid grey;
+	border-radius:50%;
+}
+.dateitem::after {
+    content: "";
+    position: absolute;
+    left: 39px;
+    width: 2px;
+    height: 100%;
+    background: #9f9f9f;
+}
+
+.dateitem::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    top: 8px;
+    background: black;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.yearitem {
+    color: #000;
+    padding: 6px 4px;
+    position: relative;
+	left: -35px;
+}
