@@ -1,4 +1,23 @@
-	@property --angle {
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+}
+body.dark-mode {
+    background-color: #fff;
+  }
+body.dark-mode .container{
+  background-color: black;
+  color: white;
+}
+body.dark-mode .dateitem::before{
+  background-color: white;
+}
+body.dark-mode .arrow svg{
+  fill: white;
+    background-color: white;
+}
+@property --angle {
   syntax: '<number>';
   initial-value:0;
   inherits: false;
@@ -57,11 +76,11 @@ line {
 }
 
 line.bg {
-    stroke: yellow;
+    sstroke: yellow;
 }
 
 line.progress {
-    stroke: green; /*    url(#gradLine); */ 
+    stroke: #8FD3F4; /*    url(#gradLine); */ 
     stroke-dasharray: 300;     
 	stroke-dashoffset: calc(300 - (300 * var(--line) / 100));
     animation: progressBarLine 2s forwards;
