@@ -3,7 +3,10 @@
   initial-value:0;
   inherits: false;
 }
-inherits: false;
+@property --value {
+  syntax: '<number>';
+  initial-value:0;
+  inherits: false;
 }
 .anton {font-family: Anton;}
 .softline1 {
@@ -49,24 +52,26 @@ inherits: false;
 svg {overflow: visible; }
 
 line {
-    stroke-width: 20;
+    stroke-width: 10;
     stroke-linecap: round;
 }
 
 line.bg {
-    stroke:  #e0e0e0; 
+    stroke: yellow;
 }
 
 line.progress {
     stroke: green; /*  url(#gradLine); */ 
-    stroke-dasharray: 350;     
-    stroke-dashoffset: 350;    
+    stroke-dasharray: 250;     
+    stroke-dashoffset: 250;    
     transition: stroke-dashoffset 1.5s ease;
 }
 
 .line-box:hover line.progress {
-   		stroke-dashoffset: calc(350 - (350 * var(--value) / 100));
+   		stroke-dashoffset: calc(250 - (250 * var(--value) / 100));
 }
+
+
 
 /*       end line         */
 
@@ -114,7 +119,7 @@ circle.progress {
 .dateitem::after {
     content: "";
     position: absolute;
-    left: 53px;
+    left: 39px;
     width: 2px;
     height: 100%;
     background: #9f9f9f;
@@ -124,7 +129,7 @@ circle.progress {
 .dateitem::before {
     content: "";
     position: absolute;
-    left: 45px;
+    left: 31px;
     top: 8px;
     background: black;
     width: 18px;
@@ -135,10 +140,9 @@ circle.progress {
 }
 
 .yearitem {
-    color: #000;
-	font-size:20px;
-    padding: 8px 10px;
+    color: #fff;
+    padding: 8px 8px;
     position: relative;
-	left: -45px;
+	left: -45px; background-image:url('arrow.png'); background-repeat: no-repeat; 
 }
 /*  end timeline  */
