@@ -1,0 +1,144 @@
+@property --angle {
+  syntax: '<number>';
+  initial-value:0;
+  inherits: false;
+}
+inherits: false;
+}
+.anton {font-family: Anton;}
+.softline1 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:95%;
+	}
+.softline2 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:85%;
+	}
+.softline3 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
+	width:88%;
+	}
+.softline4 {
+	background-image: linear-gradient(to right, #84fab0, #8fd3f4);
+	width:92%;
+	}
+.user-box {
+	width:100%; 
+	background-color:#fff; 
+	}
+.user-box img {
+	width:100%; 
+	height:100%; 
+	}
+.head-text {
+	font-size: clamp(23px, 6vw, 65pt);
+	}
+.gradient-text1 span{
+	background: linear-gradient(90deg, #E0C3FC 0%, #8EC5FC 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+.gradient-text2 span{
+	background: linear-gradient(90deg, #FA709A 0%, #FEE140 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+/*       line         */ 
+
+svg {overflow: visible; }
+
+line {
+    stroke-width: 20;
+    stroke-linecap: round;
+}
+
+line.bg {
+    stroke:  #e0e0e0; 
+}
+
+line.progress {
+    stroke: green; /*  url(#gradLine); */ 
+    stroke-dasharray: 350;     
+    stroke-dashoffset: 350;    
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.line-box:hover line.progress {
+   		stroke-dashoffset: calc(350 - (350 * var(--value) / 100));
+}
+
+/*       end line         */
+
+.circle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+circle {
+    fill: none; 
+    stroke-width: 10;  
+    r: 50; 			
+    cx: 60;			
+    cy: 60; 	
+}
+
+circle.bg {
+    stroke:  #e0e0e0;  
+   
+
+}
+
+circle.progress {
+    stroke: url(#gradient); 
+    stroke-linecap: round; 
+    stroke-dasharray: 314; 
+    stroke-dashoffset: calc(314 - (3.14 * var(--angle))); 
+	animation: progressBar 3s forwards;
+}
+
+@keyframes progressBar {
+	0% {--angle: 0; }
+	100% {--angle: var(--value);}
+}
+
+.circle span {
+    margin-top: -75px;
+}
+
+/*  timeline  */ 
+.dateitem::after {
+    content: "";
+    position: absolute;
+    left: 53px;
+    width: 2px;
+    height: 100%;
+    background: #9f9f9f;
+
+}
+
+.dateitem::before {
+    content: "";
+    position: absolute;
+    left: 45px;
+    top: 8px;
+    background: black;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 5;
+	padding:5px;
+}
+
+.yearitem {
+    color: #000;
+	font-size:20px;
+    padding: 8px 10px;
+    position: relative;
+	left: -45px;
+}
+/*  end timeline  */
