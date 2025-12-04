@@ -13,10 +13,18 @@ body.dark-mode .container{
 body.dark-mode .dateitem::before{
   background-color: white;
 }
-body.dark-mode .arrow svg{
-  fill: white;
-    background-color: white;
+body.dark-mode .yearitem{
+  color: #fff;
 }
+body.dark-mode img{
+  fill:green;
+  stroke:green;
+}	
+path{
+  fill:#292929;
+  stroke:#292929;
+}
+
 @property --angle {
   syntax: '<number>';
   initial-value:0;
@@ -159,15 +167,16 @@ circle.progress {
 
 .yearitem {
     color: #fff;
-	ffont-size:20px;
     padding: 5px 15px;
     position: relative;
 	left: -45px;
 }
 /*  end timeline  */
-.arrow svg {
+/*  arrow svg img   */ 
+.arrow img{
 	position: absolute; 
 	left: 10px;
     top: 8px;
 	z-index: -5;
+	
 	}
