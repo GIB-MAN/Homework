@@ -1,4 +1,59 @@
-﻿.anton {font-family: Anton;}
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+ 
+}
+body.dark-mode {
+    background-color: #fff;
+}
+
+body.dark-mode path{ 
+	 --icon-fill: #fff; 
+	 --icon-stroke: #fff;
+ }
+path { 
+	 fill: var(--icon-fill); 
+	 stroke: var(--icon-stroke);
+ }
+
+body.dark-mode .container{
+	background-color: black;
+	color: white;
+}
+body.dark-mode .dateitem::before{
+	background-color: white;
+}
+body.dark-mode .yearitem{
+	color: black;
+}
+
+.yearitem {
+    color: #fff;
+    padding: 5px 15px;
+    position: relative;
+	left: -45px;
+	z-index:50;
+}
+/*  end timeline  */
+/*  arrow svg img   */ 
+.icon{
+	position: absolute; 
+	left: 10px;
+    top: 8px;
+	z-index: -1;
+}
+@property --angle {
+  syntax: '<number>';
+  initial-value:0;
+  inherits: false;
+}
+@property --line {
+  syntax: '<number>';
+  initial-value:0;
+  inherits: false;
+}
+.anton {font-family: Anton;}
 .softline1 {
 	background-image: linear-gradient(to right, #84fab0, #8fd3f4); 
 	width:95%;
@@ -17,7 +72,6 @@
 	}
 .user-box {
 	width:100%; 
-	background-color:#fff; 
 	}
 .user-box img {
 	width:100%; 
@@ -26,36 +80,108 @@
 .head-text {
 	font-size: clamp(23px, 6vw, 65pt);
 	}
-.progress-box {
-	width:100%; 
-	aspect-ratio: 1;
-	border:5px solid grey;
-	border-radius:50%;
+.gradient-text1 span{
+	background: linear-gradient(90deg, #E0C3FC 0%, #8EC5FC 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
 }
+.gradient-text2 span{
+	background: linear-gradient(90deg, #FA709A 0%, #FEE140 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+/*       line         */ 
+
+svg {overflow: visible; }
+
+line {
+    stroke-width: 20;
+    stroke-linecap: round;
+}
+
+line.bg {
+    sstroke: yellow;
+}
+
+line.progress {
+    stroke: #8FD3F4; /*    url(#gradLine); */ 
+    stroke-dasharray: 300;     
+	stroke-dashoffset: calc(300 - (300 * var(--line) / 100));
+    animation: progressBarLine 2s forwards;
+	}
+@keyframes progressBarLine {
+	0% {stroke-dashoffset: 300; }
+	100% {stroke-dashoffset: var(--line);}
+}
+
+
+
+/*       end line         */
+
+.circle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+circle {
+    fill: none; 
+    stroke-width: 10;  
+    r: 50; 			
+    cx: 60;			
+    cy: 60; 	
+}
+
+circle.bg {
+    stroke:  #e0e0e0;  
+   
+
+}
+
+circle.progress {
+    stroke: url(#gradient); 
+    stroke-linecap: round; 
+    stroke-dasharray: 314; 
+    stroke-dashoffset: calc(314 - (3.14 * var(--angle))); 
+	animation: progressBar 3s forwards;
+}
+
+@keyframes progressBar {
+	0% {--angle: 0; }
+	100% {--angle: var(--value);}
+}
+
+.circle span {
+    margin-top: -75px;
+}
+
+/*  timeline  */ 
 .dateitem::after {
     content: "";
     position: absolute;
-    left: 39px;
+    left: 52px;
     width: 2px;
     height: 100%;
     background: #9f9f9f;
+
 }
 
 .dateitem::before {
     content: "";
     position: absolute;
-    left: 31px;
+    left: 44px;
     top: 8px;
     background: black;
     width: 18px;
     height: 18px;
     border-radius: 50%;
     z-index: 5;
+	padding:5px;
 }
 
-.yearitem {
-    color: #000;
-    padding: 6px 4px;
-    position: relative;
-	left: -35px;
-}
+
+  
