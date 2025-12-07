@@ -183,5 +183,15 @@ circle.progress {
 	padding:5px;
 }
 
-
+.dateitem:hover {
+	color: #8FD3F4;
+	}
+.dateitem:hover::before{
+	background: #8FD3F4;
+	}
+.dateitem:hover path{ 
+	--icon-fill: #8FD3F4;
+	--icon-stroke: #8FD3F4;
+	}
   
+
