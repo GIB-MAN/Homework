@@ -42,6 +42,7 @@ body.dark-mode .yearitem{
 	left: 10px;
     top: 8px;
 	z-index: -1;
+	transform: scale(1.4);
 }
 @property --angle {
   syntax: '<number>';
@@ -194,4 +195,5 @@ circle.progress {
 	--icon-stroke: #8FD3F4;
 	}
   
+
 
